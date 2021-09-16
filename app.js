@@ -3,11 +3,9 @@ const path = require("path")
 
 const app = express()
 
-app.use('/static',express.static(path.resolve(__dirname,"static")));
+app.use('/static', express.static(path.resolve(__dirname, "static")));
 
-app.get('/*',(req,res)=>{
-    res.sendFile(path.resolve(__dirname,"index.html"))
+app.get('/*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, "index.html"))
 })
-app.listen(5000,()=>{
-    console.log('Server is listening....')
-})
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))

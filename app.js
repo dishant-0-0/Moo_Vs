@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require("path")
+const port = process.env.PORT
 
 const app = express()
 
@@ -8,4 +9,7 @@ app.use('/static', express.static(path.resolve(__dirname, "static")));
 app.get('/*', (req, res) => {
     res.sendFile(path.resolve(__dirname, "index.html"))
 })
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
+app.listen(port, function () {
+    console.log('Server Active on', port);
+});

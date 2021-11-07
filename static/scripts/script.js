@@ -13,7 +13,7 @@ xhr.onload = function () {
     const searchText = search.target.value;
     console.log(searchText);
     const filteredSearch = data.filter((movie) => {
-      return movie.title.toLowerCase().includes(searchText.toLowerCase());
+      return movie.title.includes(searchText);
     });
     console.log(filteredSearch);
     moviesPage(filteredSearch);
